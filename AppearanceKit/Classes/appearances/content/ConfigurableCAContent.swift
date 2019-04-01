@@ -40,7 +40,7 @@ public protocol CAContent: VisualContent {
 public extension CALayer {
 
     /// Conformance to `CAContent`.
-    public var layer: CALayer {
+    var layer: CALayer {
         return self
     }
 }
@@ -57,7 +57,7 @@ public extension ConfigurableCAContent {
     ///
     /// The default implementation ask the appearance to configure the receiver.
     /// - parameter appearance: The appearance to configure the receiver.
-    public func configureContentAppearence(_ appearance: CAContentAppearance) {
+    func configureContentAppearence(_ appearance: CAContentAppearance) {
         appearance.configure(self)
     }
 }

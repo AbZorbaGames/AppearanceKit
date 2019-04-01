@@ -208,7 +208,7 @@ public extension ContentKit.Image {
     /// the given blend mode.
     /// - parameter color: The color to use for tinting.
     /// - parameter blendMode: The blend mode to use for the tint process.
-    public func tintedImage(withColor color: Color = TintedImage.DefaultTintColor(),
+    func tintedImage(withColor color: Color = TintedImage.DefaultTintColor(),
                             blendMode: TintedImage.BlendMode = TintedImage.BlendMode.sourceAtop) -> ContentKit.Image {
         return TintedImage(self,
                            color: color,

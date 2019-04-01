@@ -85,7 +85,7 @@ public protocol AttributedTextAppearance: ContentAppearance {
 
 public extension AttributedTextAppearance {
     
-    public func configure(_ text: inout AttributedText) {
+    func configure(_ text: inout AttributedText) {
         text.font = self.font
         text.color = self.color
         text.backgroundColor = self.backgroundColor

@@ -58,7 +58,7 @@ import UIKit
 public extension TextColor {
 
     /// Conformance to `Color`.
-    public var color: UIColor {
+    var color: UIColor {
         return self.normal.color
     }
 }
@@ -69,7 +69,7 @@ public extension TextColor {
     /// given states.
     /// - parameter button: the button to configure.
     /// - parameter states: the states to configure the button for.
-    public func configure(button: UIButton,
+    func configure(button: UIButton,
                           forStates states: [UIControl.State]) {
         states.forEach { state in
             button.setTitleColor(self.color(fromState: state)?.color,
@@ -80,7 +80,7 @@ public extension TextColor {
     /// Retrieves the Color from the given UIControl.State.
     /// - parameter state: The control state.
     /// - returns: the color for the given state if any.
-    public func color(fromState state: UIControl.State) -> Color? {
+    func color(fromState state: UIControl.State) -> Color? {
         switch state {
         case UIControl.State.disabled:
             return self.disabled

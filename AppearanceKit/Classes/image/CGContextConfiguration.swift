@@ -13,7 +13,7 @@ import CoreGraphics
 public extension CGContext {
 
     /// A `CGContext`'s configuration.
-    final public class Configuration {
+    final class Configuration {
 
         /// The shadow the context should use.
         public struct Shadow {
@@ -337,7 +337,7 @@ public extension CGContext {
 public extension CGContext.Configuration {
 
     /// Configures a `CGContext` with the receiver.
-    public func configure(context: CGContext) {
+    func configure(context: CGContext) {
         if let textDrawingMode = self.textDrawingMode {
             context.setTextDrawingMode(textDrawingMode)
         }

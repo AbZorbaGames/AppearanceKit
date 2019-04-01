@@ -47,18 +47,18 @@ import CoreGraphics
 
 public extension Size {
     
-    public init(size: CGSize) {
+    init(size: CGSize) {
         self.init(width: Float(size.width), height: Float(size.height))
     }
     
-    public var asCGSize: CGSize {
+    var asCGSize: CGSize {
         return CGSize(size: self)
     }
 }
 
 public extension CGSize {
     
-    public init(size: Size) {
+    init(size: Size) {
         self.init(width: CGFloat(size.width), height: CGFloat(size.height))
     }
 }

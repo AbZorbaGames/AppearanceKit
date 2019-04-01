@@ -67,7 +67,7 @@ final public class FlippedImage: ContentKit.Image {
 
 fileprivate extension FlippedImage.Flip {
 
-    fileprivate func imageOrientation(fromCurrentOrientation currentOrientation: UIImage.Orientation) -> UIImage.Orientation {
+    func imageOrientation(fromCurrentOrientation currentOrientation: UIImage.Orientation) -> UIImage.Orientation {
         switch (self, currentOrientation) {
 
         // horizontal - up

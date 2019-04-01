@@ -63,12 +63,12 @@ public struct MultipleAttributedText: Text {
 public extension MultipleAttributedText {
 
     /// The `AttributedText` the receiver is composed of.
-    public var attributedTexts: [AttributedText] {
+    var attributedTexts: [AttributedText] {
         return self.texts
     }
 
     /// Gets an `NSAttributedString` from the receiver.
-    public var attributedString: NSAttributedString {
+    var attributedString: NSAttributedString {
         return { () -> NSAttributedString in
             let string = NSMutableAttributedString()
             for text in self.texts {
@@ -83,13 +83,13 @@ public extension MultipleAttributedText {
 
     /// Append an attributed text to the receiver.
     /// - parameter attributedText: The text append.
-    public mutating func append(_ attributedText: AttributedText) {
+    mutating func append(_ attributedText: AttributedText) {
         self.texts.append(attributedText)
     }
 
     /// Append another multiple attributed text to the receiver.
     /// - parameter attributedText: The multiple attributed text append.
-    public mutating func append(_ attributedText: MultipleAttributedText) {
+    mutating func append(_ attributedText: MultipleAttributedText) {
         self.texts.append(contentsOf: attributedText.texts)
     }
 
@@ -97,7 +97,7 @@ public extension MultipleAttributedText {
     /// - parameter attributedText: The text to append. If it is not a
     /// `AtributedText` or `MultipleAttributedText` then default attributes will
     /// be used.
-    public mutating func append(_ attributedText: Text) {
+    mutating func append(_ attributedText: Text) {
         if let attr = attributedText as? AttributedText {
             self.append(attr)
         }
@@ -132,7 +132,7 @@ extension MultipleAttributedText: Comparable {}
 
 public extension AttributedText {
     
-    public static func +(lhs: AttributedText, rhs: AttributedText) -> MultipleAttributedText {
+    static func +(lhs: AttributedText, rhs: AttributedText) -> MultipleAttributedText {
         return MultipleAttributedText(texts: [lhs, rhs])
     }
 
@@ -147,7 +147,7 @@ public extension AttributedText {
 
 public extension MultipleAttributedText {
     
-    public static func +(lhs: MultipleAttributedText, rhs: MultipleAttributedText) -> MultipleAttributedText {
+    static func +(lhs: MultipleAttributedText, rhs: MultipleAttributedText) -> MultipleAttributedText {
         return MultipleAttributedText(texts: [lhs, rhs])
     }
 //
@@ -172,20 +172,20 @@ public extension MultipleAttributedText {
 
     /// Makes a `UILabel` display the receiver.
     /// - parameter label: The `UILabel` to display the receiver.
-    public func configure(label: UILabel) {
+    func configure(label: UILabel) {
         label.attributedText = self.attributedString
     }
 
     /// Makes a `UIButton` display the receiver.
     /// - parameter button: The `UIButton` to display the receiver.
-    public func configure(button: UIButton) {
+    func configure(button: UIButton) {
         self.configure(button: button, forStates: [UIControl.State.normal])
     }
 
     /// Makes a `UIButton` display the receiver for the given states.
     /// - parameter button: The `Button` to display the receiver.
     /// - parameter states: The state to configure.
-    public func configure(button: UIButton,
+    func configure(button: UIButton,
                           forStates states: [UIControl.State]) {
         let attributedString = self.attributedString
         for state in states {

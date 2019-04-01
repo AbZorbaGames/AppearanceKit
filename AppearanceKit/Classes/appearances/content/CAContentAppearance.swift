@@ -44,7 +44,7 @@ public extension CAContentAppearance {
     /// The default implementation just sets the `backgroundColor` property
     /// of the content's layer to the appearance's `backgroundColor`.
     /// - parameter content: The content co configure.
-    public func configure(_ content: ConfigurableCAContent) {
+    func configure(_ content: ConfigurableCAContent) {
         content.layer.backgroundColor = self.backgroundColor?.color.cgColor
     }
 }

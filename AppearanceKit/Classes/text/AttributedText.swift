@@ -148,7 +148,7 @@ public extension AttributedText.Alignment {
 
     /// Creates a `AttributedText.Alignment` instance from the `UIKit` or
     /// `AppKit` equivalent.
-    public init(textAlignment: NSTextAlignment) {
+    init(textAlignment: NSTextAlignment) {
         self = { () -> AttributedText.Alignment in
             switch textAlignment {
             case NSTextAlignment.left:
@@ -260,7 +260,7 @@ extension AttributedText {
 public extension AttributedText.Shadow {
 
     /// Defines a structure that specifies an amount to offset a shadow.
-    public struct Offset {
+    struct Offset {
         /// The horizontal offset in user space points.
         public let horizontal: Float
         /// The vertical offset in user space points.
@@ -289,7 +289,7 @@ public extension AttributedText.Shadow {
 
     /// Creates a `AttributedText.Shadow` from the equivalent `UIKit`/`AppKit`
     /// `NSShadow`.
-    public init(shadow: NSShadow) {
+    init(shadow: NSShadow) {
         self.offset = AttributedText.Shadow.Offset(size: shadow.shadowOffset)
         self.radius = Float(shadow.shadowBlurRadius)
         if let color = shadow.shadowColor as? UIColor {
@@ -317,7 +317,7 @@ import QuartzCore
 public extension CGSize {
 
     /// Creates a `CGSize` from an `AttributedText.Shadow.Offset`.
-    public init(offset: AttributedText.Shadow.Offset) {
+    init(offset: AttributedText.Shadow.Offset) {
         self.init(width: Double(offset.horizontal),
                   height: Double(offset.vertical))
     }
@@ -326,7 +326,7 @@ public extension CGSize {
 public extension AttributedText.Shadow.Offset {
 
     /// Creates an `AttributedText.Shadow.Offset` from a `CGSize`.
-    public init(size: CGSize) {
+    init(size: CGSize) {
         self.init(horizontal: Float(size.width),
                   vertical: Float(size.height))
     }
@@ -530,7 +530,7 @@ public extension AttributedText.ParagraphStyle.LineBreakMode {
 
     /// Creates an `AttributedText.ParagraphStyle.LineBreakMode` from the
     /// equivalent `UIKit`/`AppKit` `NSLineBreakMode`.
-    public init(_ mode: NSLineBreakMode) {
+    init(_ mode: NSLineBreakMode) {
         self = { () -> AttributedText.ParagraphStyle.LineBreakMode in
             switch mode {
             case NSLineBreakMode.byWordWrapping:
@@ -578,7 +578,7 @@ public extension AttributedText.ParagraphStyle.WritingDirection {
 
     /// Creates an `AttributedText.ParagraphStyle.WritingDirection` from the
     /// equivalent `UIKit`/`AppKit` `NSWritingDirection`.s
-    public init(_ direction: NSWritingDirection) {
+    init(_ direction: NSWritingDirection) {
         self = { () -> AttributedText.ParagraphStyle.WritingDirection in
             switch direction {
             case NSWritingDirection.natural:
@@ -700,7 +700,7 @@ extension AttributedText.Attribute {
 
 fileprivate extension AttributedText.Attribute {
     
-    fileprivate var key: NSAttributedString.Key {
+    var key: NSAttributedString.Key {
         switch self {
         case AttributedText.Attribute.font:
             return NSAttributedString.Key.font
@@ -725,7 +725,7 @@ fileprivate extension AttributedText.Attribute {
         }
     }
     
-    fileprivate var value: Any {
+    var value: Any {
         switch self {
         case let AttributedText.Attribute.font(font):
             return font.font
@@ -791,11 +791,11 @@ extension UILabel {
 
 public extension AttributedText {
     
-    public var playgroundDescription: Any {
+    var playgroundDescription: Any {
         return self.__visualRepresentation
     }
     
-    public func debugQuickLookObject() -> AnyObject? {
+    func debugQuickLookObject() -> AnyObject? {
         return self.__visualRepresentation
     }
     

@@ -32,14 +32,14 @@ public typealias Radians = Float
 
 internal extension Degrees {
 
-    internal var asRadians: Radians {
+    var asRadians: Radians {
         return Radians((self / 180) * Degrees.pi)
     }
 }
 
 internal extension Radians {
 
-    internal var asDegrees: Degrees {
+    var asDegrees: Degrees {
         return Degrees((self * 180) / Radians.pi)
     }
 }

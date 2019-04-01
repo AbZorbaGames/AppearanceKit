@@ -73,28 +73,28 @@ public protocol Font {
 }
 
 public extension Font {
-    public var font: UIFont { return self.normal.font }
+    var font: UIFont { return self.normal.font }
 
-    public var fontSize: Float { return self.pointSize }
-    public var family: String { return self.font.familyName }
-    public var name: String { return self.font.fontName }
-    public var pointSize: Float { return Float(self.font.pointSize) }
-    public var ascender: Float { return Float(self.font.ascender) }
-    public var descender: Float { return Float(self.font.descender) }
-    public var capHeight: Float { return Float(self.font.capHeight) }
-    public var xHeight: Float { return Float(self.font.xHeight) }
-    public var lineHeight: Float { return Float(self.font.lineHeight) }
-    public var leading: Float { return Float(self.font.leading) }
+    var fontSize: Float { return self.pointSize }
+    var family: String { return self.font.familyName }
+    var name: String { return self.font.fontName }
+    var pointSize: Float { return Float(self.font.pointSize) }
+    var ascender: Float { return Float(self.font.ascender) }
+    var descender: Float { return Float(self.font.descender) }
+    var capHeight: Float { return Float(self.font.capHeight) }
+    var xHeight: Float { return Float(self.font.xHeight) }
+    var lineHeight: Float { return Float(self.font.lineHeight) }
+    var leading: Float { return Float(self.font.leading) }
     
-    public var hightlighted: Font? { return nil }
-    public var disabled: Font? { return nil }
-    public var selected: Font? { return nil }
+    var hightlighted: Font? { return nil }
+    var disabled: Font? { return nil }
+    var selected: Font? { return nil }
 }
 
 public extension Font {
 
     /// Configures a `UIButton`.
-    public func configure(button: UIButton) {
+    func configure(button: UIButton) {
         button.titleLabel?.font = self.font
     }
 }

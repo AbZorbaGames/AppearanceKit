@@ -54,7 +54,7 @@ public extension UILabelAppearance {
 
     /// Configures a `ConfigurableUIContent` with the receiver.
     /// - parameter content: The `ConfigurableUIContent` to configure.
-    public func configure(_ content: ConfigurableUIContent) {
+    func configure(_ content: ConfigurableUIContent) {
         content.view.backgroundColor = self.backgroundColor?.color
         content.view.tintColor = self.tintColor?.color
 
@@ -79,7 +79,7 @@ public extension UILabelAppearance {
 
     /// Configures any `UILabel` with the receiver.
     /// - parameter content: The `UILabel` to configure.
-    public func configure<L>(_ content: L) where L: UILabel {
+    func configure<L>(_ content: L) where L: UILabel {
         let aContent = content
         
         aContent.backgroundColor = self.backgroundColor?.color
@@ -112,7 +112,7 @@ public extension UILabelAppearance {
     /// `minimumScaleFactor`, `numberOfLines` & `shadowOffset` those properties
     /// are ignored.
     /// - parameter content: The `UITextField` to configure.
-    public func configure<TF>(_ content: TF) where TF: UITextField {
+    func configure<TF>(_ content: TF) where TF: UITextField {
         let aContent = content
         
         aContent.backgroundColor = self.backgroundColor?.color
@@ -133,7 +133,7 @@ public extension UILabelAppearance {
     /// `minimumScaleFactor`, `numberOfLines`, `shadowOffset`
     /// & `adjustsFontSizeToFitWidth` those properties are ignored.
     /// - parameter content: The `UITextView` to configure.
-    public func configure<TV>(_ content: TV) where TV: UITextView {
+    func configure<TV>(_ content: TV) where TV: UITextView {
         let aContent = content
         
         aContent.backgroundColor = self.backgroundColor?.color
@@ -171,7 +171,7 @@ public enum UILabelAppearanceField {
 public extension UILabelAppearance {
 
     /// Creates a `ConfigurableUILabelAppearance` from any `UILabelAppearance`.
-    public var configurableAppearance: ConfigurableUILabelAppearance {
+    var configurableAppearance: ConfigurableUILabelAppearance {
         return ConfigurableUILabelAppearance(appearance: self)
     }
 
@@ -179,7 +179,7 @@ public extension UILabelAppearance {
     ///
     /// Immutability wins.
     /// - parameter field: The field to be updated.
-    public func updating(field: UILabelAppearanceField) -> UILabelAppearance {
+    func updating(field: UILabelAppearanceField) -> UILabelAppearance {
         var appearance = ConfigurableUILabelAppearance(appearance: self)
         switch field {
         case UILabelAppearanceField.font(let font):
@@ -204,7 +204,7 @@ public extension UILabelAppearance {
 
     /// Derives an appearance with the specified list of fields.
     /// - parameter fields: The fields to be updated.
-    public func updating(fields: UILabelAppearanceField...) -> UILabelAppearance {
+    func updating(fields: UILabelAppearanceField...) -> UILabelAppearance {
         return fields.reduce(self, { (partial: UILabelAppearance, field: UILabelAppearanceField) -> UILabelAppearance in
             return partial.updating(field: field)
         })

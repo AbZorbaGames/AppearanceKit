@@ -79,7 +79,7 @@ public struct HexColor: Color, CustomStringConvertible {
 
 fileprivate extension UIColor {
     
-    fileprivate static func _color(fromHexString hex: String) -> UIColor? {
+    static func _color(fromHexString hex: String) -> UIColor? {
         guard hex.count > 1 else { return nil }
         
         

@@ -52,7 +52,7 @@ public extension UIContentAppearance {
     /// then configures the content's layer with the `layerAppearance` if
     /// provided.
     /// - parameter content: The content to be configured by the appearance.
-    public func configure(_ content: ConfigurableUIContent) {
+    func configure(_ content: ConfigurableUIContent) {
         content.view.backgroundColor = self.backgroundColor?.color
         content.view.tintColor = self.tintColor?.color
         
@@ -79,7 +79,7 @@ public extension UIContentAppearance {
     ///
     /// Immutability wins.
     /// - parameter field: The field to be updated.
-    public func updating(field: UIContentAppearanceField) -> UIContentAppearance {
+    func updating(field: UIContentAppearanceField) -> UIContentAppearance {
         var appearance = DefaultUIContentAppearance(self)
         switch field {
         case UIContentAppearanceField.backgroundColor(let backgroundColor):
@@ -94,7 +94,7 @@ public extension UIContentAppearance {
 
     /// Derives an appearance with the specified list of fields.
     /// - parameter fields: The fields to be updated.
-    public func updating(fields: UIContentAppearanceField...) -> UIContentAppearance {
+    func updating(fields: UIContentAppearanceField...) -> UIContentAppearance {
         return fields.reduce(self, { (partial: UIContentAppearance, field: UIContentAppearanceField) -> UIContentAppearance in
             return partial.updating(field: field)
         })

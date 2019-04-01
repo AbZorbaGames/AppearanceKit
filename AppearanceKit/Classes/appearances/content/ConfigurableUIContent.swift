@@ -40,7 +40,7 @@ public extension ConfigurableUIContent {
     ///
     /// The default implementation asks the appearance to configure the receiver.
     /// - parameter appearance: The appearance to configure the receiver.
-    public func configureContentAppearence(_ appearance: UIContentAppearance) {
+    func configureContentAppearence(_ appearance: UIContentAppearance) {
         appearance.configure(self)
     }
 }

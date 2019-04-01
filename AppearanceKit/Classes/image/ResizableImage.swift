@@ -152,7 +152,7 @@ final public class MultipleStateResizableImage: ResizableImage, MultipleStateIma
 
 fileprivate extension ResizableImage.Mode {
     
-    fileprivate var resizingMode: UIImage.ResizingMode {
+    var resizingMode: UIImage.ResizingMode {
         switch self {
         case ResizableImage.Mode.tile:
             return UIImage.ResizingMode.tile

@@ -144,7 +144,7 @@ public class RotatedImage: ContentKit.Image {
 
 fileprivate extension RotatedImage.Rotation {
 
-    fileprivate func imageOrientation(fromCurrentImageOrientation currentOrientation: UIImage.Orientation) -> UIImage.Orientation {
+    func imageOrientation(fromCurrentImageOrientation currentOrientation: UIImage.Orientation) -> UIImage.Orientation {
         switch (self, currentOrientation) {
             // left
         case (RotatedImage.Rotation.left, UIImage.Orientation.up):
